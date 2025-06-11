@@ -1,5 +1,16 @@
 # provider-kubernetes
 
+## Release VSHN-fork
+
+Rebase upstream `main` from `origin`(https://github.com/crossplane-contrib/provider-kubernetes).
+
+```
+git tag $currentversion-vshn
+make build.all
+docker login ghcr.io
+.cache/tools/linux_aarch64/up-v0.28.0 xpkg push -f _output/xpkg/linux_amd64/provider-kubernetes-$currentversion-vshn.xpkg ghcr.io/vshn/provider-kubernetes:$currentversion-vshn -d
+```
+
 `provider-kubernetes` is a Crossplane Provider that enables deployment and management
 of arbitrary Kubernetes objects on clusters typically provisioned by Crossplane:
 
